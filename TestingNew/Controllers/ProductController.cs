@@ -26,19 +26,7 @@ namespace TestingNew.Controllers
             PagedList<Product> model = new PagedList<Product>(obj, page, pageSize);
             return View(model);
         }
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Product product = db.Products.Find(id);
-            if (product == null)
-            {
-                return HttpNotFound();
-            }
-            return View(product);
-        }
+       
 
         public ActionResult Create()
         {

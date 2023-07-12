@@ -23,21 +23,6 @@ namespace TestingNew.Controllers
         }
 
         
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Category category = db.Categories.Find(id);
-            if (category == null)
-            {
-                return HttpNotFound();
-            }
-            return View(category);
-        }
-
-        
         public ActionResult Create()
         {
             return View();
